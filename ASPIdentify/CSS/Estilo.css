@@ -1,0 +1,157 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: Verdana,Arial,Arial, Helvetica, sans-serif;
+}
+
+header {
+    height: 110px;
+    background: #e6e2ca;
+    border-bottom: 1px solid #a39376;
+    text-align: center;
+    line-height: 110px;
+}
+
+    header .TITULO {
+        font-family: Aparatija;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: bold;
+        color: #000000;
+    }
+
+    header .estado {
+        float: right;
+    }
+
+nav {
+    width: 1150px;
+    height: 80px;
+    margin: 0 auto;
+    border: 0px solid #a39376;
+    background: #e6e2ca;
+    border-radius: 8px;
+}
+
+MenuPrincipal {
+    float: left;
+    margin: 20px;
+    list-style-type: none;
+}
+
+nav .MenuPrincipa li {
+    list-style-type: none;
+}
+
+.MenuPrincipal > li {
+    float: left;
+}
+
+.MenuPrincipal li a {
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 70px;
+    display: block;
+    font-size: 12px;
+}
+
+    .MenuPrincipal li a:hover {
+        background-color: #434343;
+    }
+
+.MenuPrincipal li ul {
+    display: none;
+    position: absolute;
+    min-width: 140px
+}
+
+.MenuPrincipal li:hover > ul {
+    display: block;
+}
+
+.MenuPrincipal li ul li {
+    position: relative;
+}
+
+.MenuPrincipal li ul li {
+    left: -40px;
+}
+
+
+section {
+    margin: 0 auto;
+    width: 1030px;
+    text-align: center;
+}
+
+    section p {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 25px;
+        font-style: italic;
+        color: rgb(207,155,48);
+    }
+
+    section .texto {
+        font-family: 'Gill Sans','Gill Sans MT',Calibri;
+    }
+
+    section #info li {
+        list-style-type: none;
+    }
+
+footer {
+    padding: 5px;
+    border: 2px solid #999999;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+/*index.aspx*/
+.Titulos h1 {
+    color: #B4B1AB;
+    font-family: Abel;
+    font-size: 48px;
+    margin-top: 20px;
+}
+
+    .Titulos h1 span {
+        color: #FE980F;
+    }
+
+.Titulos h2 {
+    color: #363432;
+    font-family: 'Roboto',sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.Titulos h3 {
+    color: #FE980F;
+}
+
+.Titulos p {
+    color: #363432;
+    font-size: 16px;
+    font-weight: 300;
+    font-family: 'Roboto',sans-serif;
+}
+
+.Titulos button:hover {
+    background: #FE980F;
+    color: black;
+}
+
+.boton {
+    background: #FE980F;
+    border: 0 none;
+    color: white;
+    font-family: 'Roboto',sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 23px;
+}
