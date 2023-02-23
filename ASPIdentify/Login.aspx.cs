@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -15,7 +16,20 @@ namespace ASPIdentify
         string strRedirect;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                bool permitido;
+                string strRedirect;
+                if (User.Identity.IsAuthenticated)
+                {
+                    strRedirect = Request.QueryString["ReturnUrl"];
+                    permitido = UrlAuthorizationModule.CheckUrlAccessForPrincipal(strRedirect, HttpContext.Current.User, "Get");
+                    if (!permitido)
+                    {
+                        Response.Redirect("~/Error_401.aspx");
+                    }
+                }
+            }
         }
 
         protected void Iniciar_Sesion_Click(object sender, EventArgs e)

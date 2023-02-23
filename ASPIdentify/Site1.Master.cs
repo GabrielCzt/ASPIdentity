@@ -16,12 +16,9 @@ namespace ASPIdentify
 
         protected void LoginStatus1_LoggingOut(object sender, LoginCancelEventArgs e)
         {
-            var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
-            authenticationManager.SignOut();//Se cierra la sesion del usuario
-            Response.Redirect("~/Index.aspx");//Se redirije al usuario a al pagina
-                                              //Principal del sistema
-
-
+            var athenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+            athenticationManager.SignOut();
+            Response.Redirect("~/Index.aspx");
         }
     }
 }
