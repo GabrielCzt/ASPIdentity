@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ASPidentity.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Css/Estilos.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <header>
+                <span class="titulo">Seguridad Aplicaciones ASP.NET</span>
+                <span class="estado">
+                    <asp:LoginName ID="LoginName1" Font-Size="Small" runat="server" />&nbsp; &nbsp;
+                    <asp:LoginStatus ID="LoginStatus1" runat="server" Font-Size="Small" LoginText="Iniciar Sesión" 
+                        LogoutText="Cerrar Sesión" OnLoggingOut="LoginStatus1_LoggingOut"/>
+                </span>
+            </header>
+            <nav>
+                <ul aria-disabled="true" class="MenuPrincipal">
+                    <li><a href="<%=ResolveClientUrl("~/Index.aspx") %>">Inicio</a></li>
+                    <li><a runat="server" id="adminLink" visible="false" href="#">Admin</a>
+                        <ul>
+                        <li><a href="<%=ResolveClientUrl("~/Admin/AgregarProducto.aspx") %>">Agregar Producto</a></li>
+                        <li><a href="<%=ResolveClientUrl("~/Admin/EliminarProducto.aspx") %>">Eliminar producto</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#">Productos</a>
+                        <ul>
+                            <li><a href="<%=ResolveClientUrl("~/Productos/ListarProductos.aspx") %>">Listar Productos</a></li>
+                            <li><a href="<%=ResolveClientUrl("~/Productos/BusquedaProducto.aspx") %>">Busqueda Producto</a></li>
+                            <li><a href="<%=ResolveClientUrl("~/Productos/ProductoPorNombre.aspx") %>">Producto Por Nombre</a></li>
+                            <li><a href="<%=ResolveClientUrl("~/Productos/TotalizarProductos.aspx") %>">Totalizar productos</a></li>
+                            <li><a href="<%=ResolveClientUrl("~/Productos/ProductoPorFecha.aspx") %>">Producto por fecha</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Ventas</a>
+                        <ul>
+                            <li><a href="<%=ResolveClientUrl("~/Ventas/VentaProductos.aspx") %>">Venta Producto</a></li>
+                            <li><a href="<%=ResolveClientUrl("~/Ventas/ListarVentas.aspx") %>">Listar Ventas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Compras</a>
+                        <ul>
+                            <li><a href="<%=ResolveClientUrl("~/Compras/Adquisiciones.aspx") %>">Adquisiciones</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="<%=ResolveClientUrl("~/Registro.aspx") %>">Registro</a>
+                        <ul>
+
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </nav>
+            <section>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </section>
+            <footer id="pie" runat="server">
+                <asp:Label ID="Label1" runat="server" Text="Derechos Reservados &copy;"></asp:Label>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
